@@ -10,8 +10,8 @@ export default function LoginPage() {
 
     const handleSubmit = async () => {
         let userData = {
-            Username: username,
-            Password: password
+            Username,
+            Password
         }
         let token = await login(userData);
         // console.log(token)

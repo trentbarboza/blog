@@ -32,7 +32,7 @@ function checkToken(){
 
 
 async function createAccount(createdUser){
-    let res = await fetch('tbarbozablog.database.windows.net/User/AddUsers', {
+    let res = await fetch('https://trentbarbozablog.azurewebsites.net/User/AddUsers', {
         method:"POST",
         headers:{
             'Content-Type': "application/json"
@@ -50,7 +50,7 @@ async function createAccount(createdUser){
 }
 
 async function login(loginUser){
-    let res = await fetch('tbarbozablog.database.windows.net/User/Login', {
+    let res = await fetch('https://trentbarbozablog.azurewebsites.net/User/Login', {
         method:"POST",
         headers:{
             'Content-Type': "application/json"
@@ -71,7 +71,7 @@ async function login(loginUser){
 }
 
 async function GetLoggedInUserData(username){
-    let res = await fetch(`tbarbozablog.database.windows.net/User/userbyusername/${username}`);
+    let res = await fetch(`https://trentbarbozablog.azurewebsites.net/User/userbyusername/${username}`);
     let data = await res.json();
     userData = data;
     console.log(userData);
@@ -83,7 +83,7 @@ function LoggedInData(){
 
 
 async function addBlogItems(blogItems){
-    let res = await fetch('tbarbozablog.database.windows.net/BlogItem/AddBlogItem', {
+    let res = await fetch('https://trentbarbozablog.azurewebsites.net/BlogItem/AddBlogItem', {
         method:"POST",
         headers:{
             'Content-Type': "application/json"
@@ -101,20 +101,20 @@ async function addBlogItems(blogItems){
 }
 
 async function getBlogItems(){
-    let res = await fetch('tbarbozablog.database.windows.net/BlogItem/GetBlogItems');
+    let res = await fetch('https://trentbarbozablog.azurewebsites.net/BlogItem/GetBlogItems');
     let data = await res.json();
     return data;
 }
 
 async function getBlogItemsByUserId(userId){
-    let res = await fetch(`tbarbozablog.database.windows.net/BlogItem/GetItemsByUserID/${userId}`);
+    let res = await fetch(`https://trentbarbozablog.azurewebsites.net/BlogItem/GetItemsByUserID/${userId}`);
     let data = await res.json();
     return data;
 }
 
 
 async function updateBlogItems(blogItems){
-    let res = await fetch('tbarbozablog.database.windows.net/BlogItem/UpdateBlogItem', {
+    let res = await fetch('https://trentbarbozablog.azurewebsites.net/BlogItem/UpdateBlogItem', {
         method:"POST",
         headers:{
             'Content-Type': "application/json"
@@ -133,7 +133,7 @@ async function updateBlogItems(blogItems){
 
 
 async function getPublishedBlogItems(){
-    let res = await fetch('tbarbozablog.database.windows.net/BlogItem/GetPublishedItems');
+    let res = await fetch('https://trentbarbozablog.azurewebsites.net/BlogItem/GetPublishedItems');
     let data = res.json();
     return data;
 }
